@@ -1,0 +1,558 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Abril Fatface', sans-serif;
+    background-color: #ffffff; /* Background color */
+    color: #112849; /* Text color */
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #112849; /* Main background color */
+}
+/* Upper Header */
+.header-upper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px; /* Padding adjusted */
+    color: #A77352; /* Text color */
+    font-family: 'Quicksand', sans-serif;
+}
+
+.header-left a,
+.header-right a {
+    position: relative; /* For positioning the underline */
+    color: #A77352; /* Text color */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+    margin-left: 40px; 
+}
+
+.header-left a:hover,
+.header-right a:hover {
+    color: #ffffff; /* Light color on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Underline Effect */
+.header-left a::after,
+.header-right a::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Adjust height as needed */
+    background-color: #A77352; /* Underline color */
+    left: 0; /* Align to the left */
+    bottom: -4px; /* Position below the link */
+    transform: scaleX(0); /* Start with no visible underline */
+    transition: transform 0.3s ease; /* Animate the underline */
+}
+
+.header-left a:hover::after,
+.header-right a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+
+.header-right a {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+/* Lower Header */
+.header-lower {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* Padding adjusted */
+}
+
+.logo {
+    margin-left: 40px; /* Added margin to move logo slightly to the right */
+}
+
+.logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.3);
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cooper Hewitt', sans-serif;
+}
+
+.nav-menu ul li {
+    position: relative;
+    margin: 0 20px;
+}
+
+.nav-menu ul li a {
+    color: #A77352; /* Text color */
+    text-decoration: none; /* Remove default underline */
+    font-size: 18px;
+    font-family: 'Abril Fatface', cursive;
+    position: relative; /* For positioning the underline */
+}
+
+/* Underline Effect */
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full width of the link */
+    height: 2px; /* Adjust height as needed */
+    background-color: #A77352; /* Underline color */
+    left: 0; /* Align to the left */
+    bottom: -4px; /* Position below the link */
+    transform: scaleX(0); /* Start with no visible underline */
+    transition: transform 0.3s ease; /* Animate the underline */
+}
+
+.nav-menu ul li a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+
+.nav-menu ul li ul.droopdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #112849; /* Main background color */
+    display: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu ul li:hover ul.droopdown {
+    display: block;
+}
+
+.nav-menu ul li ul.droopdown li {
+    margin: 0;
+}
+
+.nav-menu ul li ul.droopdown li a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+    color: #A77352; /* Text color */
+}
+
+.nav-menu ul li ul.droopdown li a:hover {
+    background-color: #112849;
+    color: #ffffff; /* Light text color on hover */
+}
+.nav-menu ul li a.active {
+    color: #ffffff; /* Change color for the active link */
+    font-weight: bold; /* Optional: make it bold */
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 120px); /* Adjust height to account for header */
+    overflow: hidden;
+}
+
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1; /* Make the active slide visible */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+.slide h2 {
+    position: absolute;
+    bottom: 20px; /* Adjust this value for positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff; /* Light color for contrast */
+    font-size: 2em;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+/* About Us Section */
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffffff; /* Background color */
+}
+
+.about-us-container {
+    max-width: 1200px;
+    display: flex;
+    width: 100%;
+    margin-left: -30px; /* Adjust this value to move it left */
+}
+
+.about-us-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.doctor-image {
+    width: 200px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 10%; /* Circular image */
+    margin-bottom: 20px;
+    transition: transform 0.2s ease; /* Reduced zoom effect */
+}
+
+.doctor-image:hover {
+    transform: scale(1.05); /* Reduced zoom effect on hover */
+}
+
+.about-us-right {
+    flex: 2;
+}
+
+.about-us h2 {
+    color: #112849; /* Main text color */
+    margin-bottom: 20px;
+    font-size: 26px; /* Increase font size */
+    font-family: 'Abril Fatface', cursive; /* Apply the same font */
+    letter-spacing: 2px; /* Add letter spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+    position: relative; /* For the after element */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+}
+
+.about-us h2::after {
+    content: '';
+    position: absolute;
+    width: 200px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: #A77352; /* Accent color */
+    left: 50%;
+    bottom: -10px; /* Adjust distance from the text */
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition effect for width */
+}
+
+/* Hover effect */
+.about-us h2:hover {
+    color: #412616; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.about-us h2:hover::after {
+    width: 400px; /* Expand the underline on hover */
+}
+
+/* About Us Subheadings */
+.about-us h3 {
+    color: #A77352; /* Subheading color */
+    margin: 10px 0;
+    font-size: 15px; /* Increase font size */
+    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+    position: relative; /* For the after element */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+}
+
+.about-us h3::after {
+    content: '';
+    position: absolute;
+    width: 35px; /* Adjust width */
+    height: 1px; /* Adjust height */
+    background-color: #A77352; /* Accent color */
+    left: 50%;
+    bottom: -10px; /* Adjust distance from the text */
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition effect for width */
+}
+
+/* Hover effect for Mission and Vision */
+.about-us h3:hover {
+    color: #A77352; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.about-us h3:hover::after {
+    width: 100px; /* Expand the underline on hover */
+}
+
+.about-us p {
+    color: #112849; /* Text color */
+    margin-bottom: 5px;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Slightly faster and smoother transitions */
+    text-align: justify; /* Justify the paragraph */
+    font-size: 14px; /* Increase font size */
+}
+
+.about-us p:hover {
+    transform: translateY(-3px); /* Very subtle upward movement */
+    color: #A77352; /* Softer color change on hover */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Very subtle shadow effect */
+}
+
+#read-more {
+    color: #112849; /* Initial text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions for color and transform */
+    font-size: 16px; /* Increase font size */
+}
+
+
+
+.about-us-left h3 a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Keep the text color of the heading */
+    font-family: 'Abril Fatface', cursive; /* Attractive font style for CEO title */
+}
+
+.about-us-left h3 a:hover {
+    color: #A77352; /* Change color on hover, if desired */
+}
+
+.ceo-title {
+    font-family: 'Abril Fatface', cursive; /* Attractive font style for CEO title */
+    font-size: 18px; /* Adjust size as needed */
+    margin-top: 5px; /* Add spacing */
+}
+/* Mission Heading */
+.mission-heading {
+    color: #112849; /* Subheading color */
+    margin: 10px 0;
+    font-size: 26px; /* Increase font size */
+    font-family: 'Abril Fatface', cursive; /* Apply the same font */
+    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+    position: relative; /* For the after element */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+    display: inline-block; /* Make it inline-block for proper alignment */
+}
+
+.mission-heading::after {
+    content: '';
+    position: absolute;
+    width: 70px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: #A77352; /* Accent color */
+    left: 50%; /* Center align */
+    bottom: -10px; /* Adjust distance from the text */
+    transform: translateX(-50%); /* Center the line */
+    transition: width 0.3s ease; /* Transition effect for width */
+}
+
+/* Hover effect for Mission heading */
+.mission-heading:hover {
+    color: #112849; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.mission-heading:hover::after {
+    width: 100px; /* Expand the underline on hover */
+}
+/* Vision Heading */
+.vision-heading {
+    color: #112849; /* Subheading color */
+    margin: 10px 0;
+    font-size: 26px; /* Increase font size */
+    font-family: 'Abril Fatface', cursive; /* Apply the same font */
+    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+    position: relative; /* For the after element */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+    display: inline-block; /* Make it inline-block for proper alignment */
+}
+
+.vision-heading::after {
+    content: '';
+    position: absolute;
+    width: 60px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: #A77352; /* Accent color */
+    left: 50%; /* Center align */
+    bottom: -10px; /* Adjust distance from the text */
+    transform: translateX(-50%); /* Center the line */
+    transition: width 0.3s ease; /* Transition effect for width */
+}
+
+/* Hover effect for Vision heading */
+.vision-heading:hover {
+    color: #112849; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.vision-heading:hover::after {
+    width: 100px; /* Expand the underline on hover */
+}
+
+
+/* Portfolio */
+.portfolio {
+    padding: 0px 0px;
+    background-color: #FAF5F1; /* Background color */
+}
+
+.portfolio h2 {
+    color: #112849; /* Main text color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+    font-size: 30px; /* Increase the font size */
+    font-family: 'Abril Fatface', cursive; /* Apply the same font */
+    letter-spacing: 2px; /* Add letter spacing */
+    text-transform: uppercase; /* Transform text to uppercase */
+    position: relative; /* For the after element */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and transform */
+}
+
+.portfolio h2::after {
+    content: '';
+    position: absolute;
+    width: 50px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: #A77352; /* Accent color */
+    left: 50%;
+    bottom: -10px; /* Adjust distance from the text */
+    transform: translateX(-50%);
+    transition: width 0.3s ease; /* Transition effect for width */
+}
+
+/* Hover effect */
+.portfolio h2:hover {
+    color: #A77352; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.portfolio h2:hover::after {
+    width: 100px; /* Expand the underline on hover */
+}
+
+/* Add a subtle animation effect */
+.portfolio h2 {
+    animation: fadeInScale 1s ease-in-out; /* Animation effect */
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Start smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+/* Adjustments to portfolio-menu */
+.portfolio-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the portfolio menu */
+    padding: 0;
+}
+
+.portfolio-menu ul li {
+    position: relative;
+    margin: 0 20px; /* Space between categories */
+}
+
+.category-link {
+    color: #A77352; /* Text color */
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Abril Fatface', cursive; /* Attractive font */
+}
+
+/* Dropdown adjustments */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    background-color: #FAF5F1; /* Background color for dropdown */
+    display: none; /* Initially hide dropdown */
+    flex-direction: row; /* Arrange items horizontally */
+    padding: 10px 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+.portfolio-menu ul li:hover .dropdown {
+    display: flex; /* Show dropdown on hover */
+}
+
+/* Position the Medical Care dropdown to the left */
+.portfolio-menu ul li:nth-child(1) .dropdown {
+    left: -100%; /* Adjust this value as needed to position on the left */
+}
+
+/* Position the Education and Consultancy dropdown to the center */
+.portfolio-menu ul li:nth-child(2) .dropdown {
+    left: 50%; /* Center position */
+    transform: translateX(-50%);
+}
+
+/* Position the Products dropdown to the right */
+.portfolio-menu ul li:nth-child(3) .dropdown {
+    left: auto;
+    right: -100%; /* Adjust this value as needed to position on the right */
+}
+
+/* Portfolio items */
+.portfolio-item {
+    position: relative; /* Allow positioning of the overlay */
+    margin: 10px; /* Space between images */
+}
+
+.portfolio-item img {
+    width: 200px; /* Set a fixed size for images */
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #ffffff; /* Light color for text */
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust font size */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transition effect */
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
